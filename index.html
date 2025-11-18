@@ -3,16 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Medico Web</title>
+    <title>About Us | Medico Web</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* [PASTE ALL THE CSS FROM YOUR updated index.html FILE HERE] */
-        /* IMPORTANT: To make all pages look consistent, ensure the CSS styles 
-           are identical across all your HTML files (index.html, about.html, contact.html, products.html). 
-           Ideally, use a separate style.css file for cleaner management. 
-        */
+        /* [STYLES ARE IDENTICAL TO index.html, with additions for content layout] */
         :root {
             --primary-pink: #ff70c6;
             --primary-purple: #b46cff;
@@ -20,8 +16,10 @@
             --text-dark: #333333;
             --text-gray: #666666;
             --bg-light: #f9f9f9;
+            --card-shadow: 0 10px 20px rgba(0,0,0,0.05);
         }
 
+        /* Global Reset */
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
@@ -31,37 +29,65 @@
             line-height: 1.6;
         }
 
-        /* Header Styles */
+        /* ========================================
+           HEADER SECTION & NAVIGATION
+        ========================================
+        */
         header {
             background: var(--gradient-main);
-            padding: 2rem 1rem;
+            padding: 3rem 1rem;
             text-align: center;
             color: white;
+        }
+
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
             display: flex;
-            justify-content: space-around;
+            flex-direction: column;
             align-items: center;
+            gap: 1rem;
+        }
+
+        /* Logo Styling */
+        .logo {
+            height: 80px;
+            width: auto;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+            object-fit: contain;
+            margin-bottom: 10px;
         }
         
-        /* Navigation */
+        .logo-link { text-decoration: none; }
+
+        /* Navigation Links */
         nav a {
             color: white;
             text-decoration: none;
             font-weight: 500;
-            margin-left: 20px;
+            margin: 0 10px;
             transition: opacity 0.3s;
         }
         
         nav a:hover { opacity: 0.8; }
 
-        .logo {
-            height: 60px;
-            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
-            object-fit: contain;
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            font-weight: 300;
+            opacity: 0.9;
         }
         
-        .logo-link { text-decoration: none; }
-        
-        /* Main Content Styles */
+        /* ========================================
+           CONTENT SECTION
+        ========================================
+        */
         .content-section {
             max-width: 900px;
             margin: 3rem auto;
@@ -76,46 +102,21 @@
             margin-bottom: 20px;
         }
         
-        /* Contact Form Specific Styles */
-        .contact-form label {
-            display: block;
-            margin-top: 15px;
-            margin-bottom: 5px;
-            font-weight: 600;
+        .content-section h3 {
+            margin-top: 25px;
+            margin-bottom: 10px;
+            color: var(--primary-pink);
         }
         
-        .contact-form input[type="text"],
-        .contact-form input[type="email"],
-        .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-family: 'Poppins', sans-serif;
-        }
-        
-        .contact-form textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-        
-        .contact-form button {
-            margin-top: 20px;
-            padding: 12px 25px;
-            background: var(--gradient-main);
-            color: white;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: opacity 0.3s;
-        }
-        
-        .contact-form button:hover {
-            opacity: 0.85;
+        .content-section p {
+            margin-bottom: 15px;
+            text-align: justify;
         }
 
-        /* Footer Styles */
+        /* ========================================
+           FOOTER
+        ========================================
+        */
         footer {
             text-align: center;
             padding: 2rem;
@@ -125,46 +126,25 @@
             font-size: 0.9rem;
             color: var(--text-gray);
         }
+
+        /* Mobile adjustments */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .tagline { font-size: 1rem; }
+            .logo { height: 60px; }
+            nav { margin-top: 5px; }
+            nav a { margin: 0 5px; font-size: 0.9rem;}
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="index.html" class="logo-link">
-            <img src="logo.png.jpg" alt="Medico Web Logo" class="logo">
-        </a>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="products.html">Products</a>
-            <a href="contact.html">Contact Us</a>
-        </nav>
-    </header>
-
-    <div class="content-section">
-        <h2>Contact Medico Web 📞</h2>
-        <p>Have a question about an order, need support, or interested in a collaboration? Fill out the form below or reach out to us directly!</p>
-        
-        <form class="contact-form" action="#" method="POST">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Your Email</label>
-            <input type="email" id="email" name="email" required>
+        <div class="header-content">
             
-            <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject">
+            <a href="index.html" class="logo-link">
+                <img src="logo.png.jpg" alt="Medico Web Custom Logo" class="logo">
+            </a>
 
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required></textarea>
-
-            <button type="submit">Send Message</button>
-        </form>
-    </div>
-
-    <footer>
-        <p>&copy; 2025 Medico Web – All Rights Reserved</p>
-    </footer>
-
-</body>
-</html>
+            <div>
+                <h1>Medico Web</h1>
