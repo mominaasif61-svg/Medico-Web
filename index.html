@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products | Medico Web</title>
+    <title>Home | Medico Web</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* [STYLES ARE IDENTICAL TO index.html] */
+        /* [STYLES ARE IDENTICAL ACROSS ALL PAGES] */
         :root {
             --primary-pink: #ff70c6;
             --primary-purple: #b46cff;
@@ -30,7 +30,7 @@
         }
 
         /* ========================================
-           HEADER SECTION & NAVIGATION
+            HEADER SECTION & NAVIGATION
         ========================================
         */
         header {
@@ -38,6 +38,11 @@
             padding: 3rem 1rem;
             text-align: center;
             color: white;
+            /* Added min-height to give the header more impact on the home page */
+            min-height: 250px; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .header-content {
@@ -85,80 +90,43 @@
         }
 
         /* ========================================
-           PRODUCT GRID SECTION
+            HERO SECTION (Home Content)
         ========================================
         */
         .container {
-            max-width: 1200px;
-            margin: 3rem auto;
+            max-width: 900px;
+            margin: -80px auto 3rem auto; /* Pull the content up over the header background */
             padding: 0 1.5rem;
         }
 
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
-        }
-
-        /* Product Card Styling */
-        .product-card {
+        .hero-section {
             background: white;
+            padding: 40px;
             border-radius: 20px;
-            overflow: hidden;
-            box-shadow: var(--card-shadow);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
+            box-shadow: 0 20px 40px rgba(180, 108, 255, 0.15); /* Stronger shadow for the main block */
+            text-align: center;
         }
 
-        /* Hover Lift Effect */
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(180, 108, 255, 0.2);
-        }
-
-        .product-image-container {
-            width: 100%;
-            height: 200px;
-            background-color: #eee;
-            overflow: hidden;
-        }
-
-        .product-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .card-content {
-            padding: 1.5rem;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .product-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
+        .hero-section h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
             color: var(--text-dark);
+            margin-bottom: 1rem;
         }
 
-        .product-desc {
-            font-size: 0.9rem;
+        .hero-section p {
+            font-size: 1.15rem;
             color: var(--text-gray);
-            margin-bottom: 1.5rem;
-            flex-grow: 1;
+            margin-bottom: 2rem;
         }
-
+        
         /* ========================================
-           BUTTONS
+            BUTTONS (Reusing Buy Button Style)
         ========================================
         */
-        .buy-btn {
-            display: block;
-            width: 100%;
-            padding: 12px;
+        .cta-btn {
+            display: inline-block; /* Use inline-block for centering */
+            padding: 15px 30px;
             background: var(--gradient-main);
             color: white;
             border: none;
@@ -168,13 +136,18 @@
             cursor: pointer;
             text-decoration: none;
             text-align: center;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.3s ease, transform 0.2s;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
         }
 
-        .buy-btn:hover { opacity: 0.85; }
+        .cta-btn:hover { 
+            opacity: 0.9; 
+            transform: scale(1.02);
+        }
 
         /* ========================================
-           FOOTER
+            FOOTER
         ========================================
         */
         footer {
@@ -194,6 +167,9 @@
             .logo { height: 60px; }
             nav { margin-top: 5px; }
             nav a { margin: 0 5px; font-size: 0.9rem;}
+            .hero-section { padding: 25px; }
+            .hero-section h2 { font-size: 1.8rem; }
+            .hero-section p { font-size: 1rem; }
         }
     </style>
 </head>
@@ -220,121 +196,20 @@
         </div>
     </header>
 
-    <div class="container">
-        <div class="product-grid">
+    <main class="container">
+        <section class="hero-section">
+            
+            <h2>🎉 Welcome to Medico Web – Your Digital Hub for Medical Learning & Productivity</h2>
+            
+            <p>At Medico Web, we bring you high-quality, beautifully designed, and academically reliable digital medical resources to help you study better, stay organized, and boost your productivity.</p>
 
-            <article class="product-card">
-                <div class="product-image-container">
-                    <img src="https://placehold.co/600x400/ffe4f5/b46cff?text=Pharmacology" alt="Pharmacology Notes" class="product-image">
-                </div>
-                <div class="card-content">
-                    <h3 class="product-title">Medical Notes – Pharmacology</h3>
-                    <p class="product-desc">Comprehensive study guides covering drug classifications and mechanisms.</p>
-                    <a href="#" class="buy-btn">Buy Now</a>
-                </div>
-            </article>
+            <p>Whether you’re a medical student, pharmacy student, nurse, or healthcare professional, our digital products are designed to simplify your learning journey and support your professional growth.</p>
 
-            <article class="product-card">
-                <div class="product-image-container">
-                    <img src="https://placehold.co/600x400/ffe4f5/b46cff?text=Pathology" alt="Pathology Bundle" class="product-image">
-                </div>
-                <div class="card-content">
-                    <h3 class="product-title">Pathology Digital Bundle</h3>
-                    <p class="product-desc">High-yield pathology diagrams and disease process flowcharts.</p>
-                    <a href="#" class="buy-btn">Buy Now</a>
-                </div>
-            </article>
+            <a href="products.html" class="cta-btn">Explore Our Digital Products</a>
 
-            <article class="product-card">
-                <div class="product-image-container">
-                    <img src="https://placehold.co/600x400/ffe4f5/b46cff?text=Anatomy" alt="Anatomy Flashcards" class="product-image">
-                </div>
-                <div class="card-content">
-                    <h3 class="product-title">Anatomy Flashcards</h3>
-                    <p class="product-desc">Digital flashcards for rapid memorization of muscles, nerves, and bones.</p>
-                    <a href="#" class="buy-btn">Buy Now</a>
-                </div>
-            </article>
+        </section>
 
-            <article class="product-card">
-                <div class="product-image-container">
-                    <img src="https://placehold.co/600x400/ffe4f5/b46cff?text=Case+Templates" alt="Clinical Cases" class="product-image">
-                </div>
-                <div class="card-content">
-                    <h3 class="product-title">Clinical Case Templates</h3>
-                    <p class="product-desc">Structured templates for writing up patient history and physicals.</p>
-                    <a href="#" class="buy-btn">Buy Now</a>
-                </div>
-            </article>
-
-            <article class="product-card">
-                <div class="product-image-container">
-                    <img src="https://placehold.co/600x400/ffe4f5/b46cff?text=Calculations" alt="Pharmacy Calculations" class="product-image">
-                </div>
-                <div class="card-content">
-                    <h3 class="product-title">Pharmacy Calculations Guide</h3>
-                    <p class="product-desc">Master dosing formulas and infusions with this cheat sheet.</p>
-                    <a href="#" class="buy-btn">Buy Now</a>
-                </div>
-            </article>
-
-            <article class="product-card">
-                <div class="product-image-container">
-                    <img src="https://placehold.co/600x400/ffe4f5/b46cff?text=Resume" alt="Medical Resume" class="product-image">
-                </div>
-                <div class="card-content">
-                    <h3 class="product-title">Medical Resume Template</h3>
-                    <p class="product-desc">Professional CV templates designed specifically for healthcare roles.</p>
-                    <a href="#" class="buy-btn">Buy Now</a>
-                </div>
-            </article>
-
-            <article class="product-card">
-                <div class="product-image-container">
-                    <img src="https://placehold.co/600x400/ffe4f5/b46cff?text=SOP+Pack" alt="SOP Pack" class="product-image">
-                </div>
-                <div class="card-content">
-                    <h3 class="product-title">SOP + Personal Statement Pack</h3>
-                    <p class="product-desc">Examples and guides for residency and school applications.</p>
-                    <a href="#" class="buy-btn">Buy Now</a>
-                </div>
-            </article>
-
-            <article class="product-card">
-                <div class="product-image-container">
-                    <img src="https://placehold.co/600x400/ffe4f5/b46cff?text=Nursing+Notes" alt="Nursing Notes" class="product-image">
-                </div>
-                <div class="card-content">
-                    <h3 class="product-title">Nursing Notes Bundle</h3>
-                    <p class="product-desc">Essential cheat sheets for bedside nursing and NCLEX prep.</p>
-                    <a href="#" class="buy-btn">Buy Now</a>
-                </div>
-            </article>
-
-            <article class="product-card">
-                <div class="product-image-container">
-                    <img src="https://placehold.co/600x400/ffe4f5/b46cff?text=Planner" alt="Study Planner" class="product-image">
-                </div>
-                <div class="card-content">
-                    <h3 class="product-title">Medical Study Planner</h3>
-                    <p class="product-desc">Organize your rotations and exam schedules effectively.</p>
-                    <a href="#" class="buy-btn">Buy Now</a>
-                </div>
-            </article>
-
-            <article class="product-card">
-                <div class="product-image-container">
-                    <img src="https://placehold.co/600x400/ffe4f5/b46cff?text=Notebook" alt="Digital Notebook" class="product-image">
-                </div>
-                <div class="card-content">
-                    <h3 class="product-title">Digital Notebook Template</h3>
-                    <p class="product-desc">Hyperlinked PDF notebook for iPad, GoodNotes, and Notability.</p>
-                    <a href="#" class="buy-btn">Buy Now</a>
-                </div>
-            </article>
-
-        </div>
-    </div>
+        </main>
 
     <footer>
         <p>&copy; 2025 Medico Web – All Rights Reserved</p>
