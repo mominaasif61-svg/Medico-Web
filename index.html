@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | Medico Web</title>
+    <title>About Us | Medico Web</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* [STYLES ARE IDENTICAL ACROSS ALL PAGES] */
+        /* [STYLES ARE IDENTICAL TO other pages] */
         :root {
             --primary-pink: #ff70c6;
             --primary-purple: #b46cff;
@@ -38,11 +38,6 @@
             padding: 3rem 1rem;
             text-align: center;
             color: white;
-            /* Added min-height to give the header more impact on the home page */
-            min-height: 250px; 
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
         }
 
         .header-content {
@@ -90,60 +85,62 @@
         }
 
         /* ========================================
-            HERO SECTION (Home Content)
+            ABOUT US CONTENT STYLES
         ========================================
         */
         .container {
             max-width: 900px;
-            margin: -80px auto 3rem auto; /* Pull the content up over the header background */
+            margin: 3rem auto;
             padding: 0 1.5rem;
         }
 
-        .hero-section {
+        .about-section {
             background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(180, 108, 255, 0.15); /* Stronger shadow for the main block */
-            text-align: center;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
         }
 
-        .hero-section h2 {
-            font-size: 2.2rem;
+        /* Simplified H2 styling to avoid potential display issues */
+        .about-section h2 {
+            font-size: 1.8rem;
             font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 1rem;
-        }
-
-        .hero-section p {
-            font-size: 1.15rem;
-            color: var(--text-gray);
-            margin-bottom: 2rem;
+            color: var(--primary-purple);
+            margin-bottom: 1.5rem;
+            text-align: center; /* Centered H2 looks clean */
         }
         
-        /* ========================================
-            BUTTONS (Reusing Buy Button Style)
-        ========================================
-        */
-        .cta-btn {
-            display: inline-block; /* Use inline-block for centering */
-            padding: 15px 30px;
-            background: var(--gradient-main);
-            color: white;
-            border: none;
-            border-radius: 50px;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-            cursor: pointer;
-            text-decoration: none;
-            text-align: center;
-            transition: opacity 0.3s ease, transform 0.2s;
-            font-size: 1.1rem;
-            letter-spacing: 0.5px;
+        .about-section h3 {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-top: 2rem;
+            margin-bottom: 0.8rem;
         }
 
-        .cta-btn:hover { 
-            opacity: 0.9; 
-            transform: scale(1.02);
+        .about-section p {
+            margin-bottom: 1.5rem;
+            color: var(--text-gray);
+        }
+
+        .offer-list {
+            list-style: none; /* Remove default bullets */
+            padding-left: 0;
+            margin-bottom: 2rem; /* Added margin below list */
+        }
+
+        .offer-list li {
+            position: relative;
+            padding-left: 25px; /* Space for the icon */
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .offer-list li::before {
+            content: '✨'; /* Stylish icon for list items */
+            position: absolute;
+            left: 0;
+            color: var(--primary-pink);
+            font-size: 1.1rem;
         }
 
         /* ========================================
@@ -167,53 +164,4 @@
             .logo { height: 60px; }
             nav { margin-top: 5px; }
             nav a { margin: 0 5px; font-size: 0.9rem;}
-            .hero-section { padding: 25px; }
-            .hero-section h2 { font-size: 1.8rem; }
-            .hero-section p { font-size: 1rem; }
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <div class="header-content">
-            
-            <a href="index.html" class="logo-link">
-                <img src="logo.png.jpg" alt="Medico Web Custom Logo" class="logo">
-            </a>
-
-            <div>
-                <h1>Medico Web</h1>
-                <p class="tagline">Premium Digital Products for Medical Students & Professionals</p>
-            </div>
-            
-            <nav style="margin-top: 10px; font-size: 1.1rem;">
-                <a href="index.html">Home</a>
-                <a href="about.html">About Us</a>
-                <a href="products.html">Products</a>
-                <a href="contact.html">Contact Us</a>
-            </nav>
-        </div>
-    </header>
-
-    <main class="container">
-        <section class="hero-section">
-            
-            <h2>🎉 Welcome to Medico Web – Your Digital Hub for Medical Learning & Productivity</h2>
-            
-            <p>At Medico Web, we bring you high-quality, beautifully designed, and academically reliable digital medical resources to help you study better, stay organized, and boost your productivity.</p>
-
-            <p>Whether you’re a medical student, pharmacy student, nurse, or healthcare professional, our digital products are designed to simplify your learning journey and support your professional growth.</p>
-
-            <a href="products.html" class="cta-btn">Explore Our Digital Products</a>
-
-        </section>
-
-        </main>
-
-    <footer>
-        <p>&copy; 2025 Medico Web – All Rights Reserved</p>
-    </footer>
-
-</body>
-</html>
+            .about-section { padding:
