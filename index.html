@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Medico Web</title>
+    <title>Contact Us | Medico Web</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* [STYLES ARE IDENTICAL TO other pages] */
+        /* [GLOBAL STYLES] */
         :root {
             --primary-pink: #ff70c6;
             --primary-purple: #b46cff;
@@ -19,7 +19,6 @@
             --card-shadow: 0 10px 20px rgba(0,0,0,0.05);
         }
 
-        /* Global Reset */
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
@@ -29,10 +28,6 @@
             line-height: 1.6;
         }
 
-        /* ========================================
-            HEADER SECTION & NAVIGATION
-        ========================================
-        */
         header {
             background: var(--gradient-main);
             padding: 3rem 1rem;
@@ -49,7 +44,6 @@
             gap: 1rem;
         }
 
-        /* Logo Styling */
         .logo {
             height: 80px;
             width: auto;
@@ -60,7 +54,6 @@
         
         .logo-link { text-decoration: none; }
 
-        /* Navigation Links */
         nav a {
             color: white;
             text-decoration: none;
@@ -84,68 +77,100 @@
             opacity: 0.9;
         }
 
-        /* ========================================
-            ABOUT US CONTENT STYLES
-        ========================================
-        */
         .container {
-            max-width: 900px;
+            max-width: 600px;
             margin: 3rem auto;
             padding: 0 1.5rem;
         }
 
-        .about-section {
+        .contact-form-card {
             background: white;
             padding: 2.5rem;
             border-radius: 15px;
             box-shadow: var(--card-shadow);
         }
 
-        .about-section h2 {
-            font-size: 1.8rem;
+        .contact-form-card h2 {
+            font-size: 2rem;
             font-weight: 700;
             color: var(--primary-purple);
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.5rem;
             text-align: center;
         }
-        
-        .about-section h3 {
-            font-size: 1.5rem;
-            color: var(--text-dark);
-            margin-top: 2rem;
-            margin-bottom: 0.8rem;
-        }
 
-        .about-section p {
-            margin-bottom: 1.5rem;
+        .contact-info {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
             color: var(--text-gray);
         }
 
-        .offer-list {
-            list-style: none;
-            padding-left: 0;
-            margin-bottom: 2rem;
+        .contact-info a {
+            color: var(--primary-pink);
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s;
         }
 
-        .offer-list li {
-            position: relative;
-            padding-left: 25px;
-            margin-bottom: 10px;
+        .contact-info a:hover {
+            color: var(--primary-purple);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
             color: var(--text-dark);
         }
 
-        .offer-list li::before {
-            content: '✨';
-            position: absolute;
-            left: 0;
-            color: var(--primary-pink);
-            font-size: 1.1rem;
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
         }
 
-        /* ========================================
-            FOOTER
-        ========================================
-        */
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus {
+            border-color: var(--primary-purple);
+            box-shadow: 0 0 0 3px rgba(180, 108, 255, 0.1);
+            outline: none;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: var(--gradient-main);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+            transition: opacity 0.3s ease;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+
+        .submit-btn:hover { opacity: 0.85; }
+
         footer {
             text-align: center;
             padding: 2rem;
@@ -156,14 +181,13 @@
             color: var(--text-gray);
         }
 
-        /* Mobile adjustments */
         @media (max-width: 768px) {
             h1 { font-size: 2rem; }
             .tagline { font-size: 1rem; }
             .logo { height: 60px; }
             nav { margin-top: 5px; }
             nav a { margin: 0 5px; font-size: 0.9rem;}
-            .about-section { padding: 1.5rem; }
+            .contact-form-card { padding: 1.5rem; }
         }
     </style>
 </head>
@@ -191,32 +215,40 @@
     </header>
 
     <main class="container">
-        <section class="about-section">
+        <section class="contact-form-card">
             
-            <h2>About Us – Medico Web</h2>
+            <h2>Get In Touch 📧</h2>
             
-            <p>Welcome to **Medico Web**, a **trusted digital resource hub** dedicated to providing **premium-quality** medical e-books, study materials, templates, and productivity tools for healthcare students and professionals. We are committed to delivering accessible, reliable, and beautifully designed digital products that simplify learning, enhance productivity, and support continuous professional growth.</p>
+            <p class="contact-info">
+                Have a question about our notes or a partnership inquiry? <br>
+                Reach us directly at: 
+                <a href="mailto:medicopharma41@gmail.com">**medicopharma41@gmail.com**</a>
+            </p>
 
-            <h3>Who We Are</h3>
-            <p>Medico Web was founded with a vision to make medical learning **easier, more organized, and more efficient**. We understand the challenges faced by medical students, pharmacists, nurses, and healthcare workers—long study hours, vast syllabi, complex concepts, and the constant need for reliable resources.</p>
-            
-            <p>Our platform bridges these gaps by offering expertly crafted digital materials that are both **academically accurate and visually appealing**.</p>
-            
-            <p>We combine medical knowledge, digital design expertise, and modern productivity strategies to create resources that **elevate your academic and professional journey**.</p>
-            
-            <h3>What We Offer</h3>
-            <p>At Medico Web, we specialize in **high-quality digital products** tailored for the medical field, including:</p>
-            
-            <ul class="offer-list">
-                <li>Medical e-books and concise review notes</li>
-                <li>Printable and digital study notebooks</li>
-                <li>Planners, organizers, and time-management templates</li>
-                <li>Clinical reference sheets and learning guides</li>
-                <li>Digital notebook templates for tablets</li>
-                <li>Visual medical infographics, trackers, and worksheets</li>
-            </ul>
+            <form action="#" method="POST">
+                
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
 
-            <p>Each product is carefully designed to support **clarity, retention, productivity, and long-term learning**.</p>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
 
         </section>
     </main>
